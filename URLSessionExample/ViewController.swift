@@ -8,12 +8,27 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    let session = URLSession.shared
+    let sessionConfiguration = URLSessionConfiguration.default
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        obtainPosts()
     }
-
-
+    
+    func obtainPosts() {
+        
+        guard let url = URL(string: "https://jsonplaceholder.typicode.com/posts") else { return }
+        
+        let dataTask = session.dataTask(with: url) { data, response, error in
+            if error == nil {
+                print("Success!")
+            }
+        }
+        
+        dataTask.resume()
+    }
 }
 
