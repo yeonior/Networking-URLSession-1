@@ -13,6 +13,7 @@
 		A2280E4C2773ADBD00C8CF32 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2280E4A2773ADBD00C8CF32 /* Main.storyboard */; };
 		A2280E4E2773ADBE00C8CF32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2280E4D2773ADBE00C8CF32 /* Assets.xcassets */; };
 		A2280E512773ADBE00C8CF32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2280E4F2773ADBE00C8CF32 /* LaunchScreen.storyboard */; };
+		A2288F532774F311007B6627 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2288F522774F311007B6627 /* Post.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		A2280E4D2773ADBE00C8CF32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A2280E502773ADBE00C8CF32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A2280E522773ADBE00C8CF32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A2288F522774F311007B6627 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				A2280E442773ADBD00C8CF32 /* AppDelegate.swift */,
 				A2280E462773ADBD00C8CF32 /* SceneDelegate.swift */,
+				A2288F522774F311007B6627 /* Post.swift */,
 				A2280E482773ADBD00C8CF32 /* ViewController.swift */,
 				A2280E4A2773ADBD00C8CF32 /* Main.storyboard */,
 				A2280E4D2773ADBE00C8CF32 /* Assets.xcassets */,
@@ -141,6 +144,7 @@
 				A2280E492773ADBD00C8CF32 /* ViewController.swift in Sources */,
 				A2280E452773ADBD00C8CF32 /* AppDelegate.swift in Sources */,
 				A2280E472773ADBD00C8CF32 /* SceneDelegate.swift in Sources */,
+				A2288F532774F311007B6627 /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
