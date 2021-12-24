@@ -9,15 +9,12 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let session = URLSession.shared
-    let sessionConfiguration = URLSessionConfiguration.default
-    let decoder = JSONDecoder()
+    let newtworkManager = NetworkManager()
     var posts = [Post]()
     
     let myTableView: UITableView = {
         let tableView = UITableView()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-        
         return tableView
     }()
     
@@ -28,34 +25,6 @@ class ViewController: UIViewController {
         view.addSubview(myTableView)
         myTableView.frame = view.bounds
         myTableView.dataSource = self
-        obtainPosts()
-    }
-    
-    func obtainPosts() {
-        
-        guard let url = URL(string: "https://jsonplaceholder.typicode.com/posts") else { return }
-        
-        let dataTask = session.dataTask(with: url) { [weak self] data, response, error in
-            
-            guard let self = self else { return }
-            
-            if error == nil, let parseData = data {
-                
-                do {
-                    self.posts = try self.decoder.decode([Post].self, from: parseData)
-                    DispatchQueue.main.async {
-                        self.myTableView.reloadData()
-                    }
-                } catch {
-                    print("Parsing went wrong!")
-                }
-                
-            } else if let error = error {
-                print("Error: \(error.localizedDescription)")
-            }
-        }
-        
-        dataTask.resume()
     }
 }
 
@@ -71,6 +40,4 @@ extension ViewController: UITableViewDataSource {
         
         return cell
     }
-    
-    
 }
