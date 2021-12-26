@@ -24,7 +24,7 @@ class NetworkManager {
         
         let dataTask = session.dataTask(with: url) { [weak self] data, response, error in
             
-            var result: ObtainPostsResult = .success(posts: [])
+            var result: ObtainPostsResult
             
             defer {
                 DispatchQueue.main.async {
@@ -45,6 +45,8 @@ class NetworkManager {
                 
             } else if let error = error {
                 result = .failure(error: error)
+            } else {
+                result = .success(posts: [])
             }
         }
         

@@ -25,6 +25,18 @@ class ViewController: UIViewController {
         view.addSubview(myTableView)
         myTableView.frame = view.bounds
         myTableView.dataSource = self
+        
+        newtworkManager.obtainPosts { [weak self] result in
+            switch result {
+            case .success(let posts):
+                self?.posts = posts
+                DispatchQueue.main.async {
+                    self?.myTableView.reloadData()
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
 }
 
